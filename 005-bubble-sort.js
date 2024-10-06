@@ -18,17 +18,22 @@ const badBubbleSort = arr => {
 const goodBubbleSort = arr => {
   let iterations = 0;
   let noSwaps = true;
+
   for (let i = arr.length - 1; i > 0; i--) {
     noSwaps = true;
+
     for (let j = 0; j < i; j++) {
       if (arr[j] > arr[j + 1]) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
         noSwaps = false;
       }
+
       iterations++;
     }
+
     if (noSwaps) break;
   }
+
   return { arr, iterations };
 };
 console.log(goodBubbleSort([10, 1, 2, 3, 4, 5, 6, 7, 8]));
